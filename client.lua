@@ -152,6 +152,7 @@ Citizen.CreateThread(function()
                 local coords = GetEntityCoords(playerPed)
                 print("Fire Alert Called")
                 TriggerServerEvent('af-alert:server:fireAlert', coords)
+                
                 if shotCount >= 2 then
                     canTriggerShotAlert = false
                     Citizen.SetTimeout(Config.ShotCooldown, function()
@@ -161,7 +162,7 @@ Citizen.CreateThread(function()
                 end
             end
         end
-        Citizen.Wait(100)
+        Citizen.Wait(50)  
     end
 end)
 
