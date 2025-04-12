@@ -1,58 +1,60 @@
 Config = {}
 
 
+Config.ShootAlert = true     
+Config.Debug = true         
 
-Config.ShootAlert = true
-Config.Debug = true -- Debug modu aktif/pasif
 
-Config.AlertDistance = 150.0
+Config.AlertDistance = 150.0 -- Bildirim gönderilecek varsayılan maksimum mesafe
+Config.BlipDuration = 10000  -- Blip'in ekranda kalma süresi (ms cinsinden)
+Config.ShotCooldown = 5000   -- 2 ateşten sonra bildirimin tekrar tetiklenmemesi için gecikme süresi (ms cinsinden)
 
-Config.AlertJobs = { --true = ignore self for notify
-    unemployed=false,
+
+Config.AlertJobs = { --true olursa shootfire bildirimi göndermez.
+    police = true,      
+    sheriff = true,     
+    unemployed = false 
 }
-Config.BlipDuration = 10000
 
-
-Config.ShotCooldown = 5000 
-
-
-
-
+-- Varsayılan bildirim tipleri
 Config.DefaultAlerts = {
+    -- Ateş etme bildirimleri için
     shotfire = {
         title = "Ateş Edildi",
         description = "Yakınlarda ateş edildi.",
         notifyType = "inform",
         blip = "shotfire"
     },
+    -- Özel bildirimler için
     custom = {
-        title = "Custom Alert",
-        description = "Custom alert desc.",
+        title = "Bildirim",
+        description = "Özel bildirim.",
         notifyType = "inform",
         blip = "custom"
     }
 }
 
-
---blips https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips
-
-
+-- Blip tipleri listesi
+-- Tüm blip sprite ID'leri için: https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips
 Config.Blips = {
+    -- Ateş etme bildirimi için blip
     shotfire = {
-        sprite = 150441873,
-        scale = 0.5,
-        label = "Ateş Edildi",
-        modifier = `blip_radius_search`,
-        color = 1,
-        areaSize = 10.0
+        sprite = 150441873,                  
+        scale = 0.5,                          
+        label = "Ateş Edildi",               
+        modifier = `blip_radius_search`,      
+        color = 1,                             
+        areaSize = 10.0                       
     },
-
+    
+    -- Varsayılan özel bildirim blipi
     custom = {
         sprite = 1754506823,
         scale = 0.5,
-        label = "CUSTOM ALERT",
+        label = "Bildirim",
         modifier = `blip_deadeye_cross`,
         color = 1,
         areaSize = 15.0
     },
+
 }
