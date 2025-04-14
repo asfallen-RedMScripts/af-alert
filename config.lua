@@ -2,7 +2,7 @@ Config = {}
 
 
 Config.ShootAlert = true     
-Config.Debug = true         
+Config.Debug = false      
 
 
 Config.AlertDistance = 150.0 -- Bildirim gönderilecek varsayılan maksimum mesafe
@@ -18,14 +18,12 @@ Config.AlertJobs = { --true olursa shootfire bildirimi göndermez.
 
 -- Varsayılan bildirim tipleri
 Config.DefaultAlerts = {
-    -- Ateş etme bildirimleri için
     shotfire = {
         title = "Ateş Edildi",
         description = "Yakınlarda ateş edildi.",
         notifyType = "inform",
         blip = "shotfire"
     },
-    -- Özel bildirimler için
     custom = {
         title = "Bildirim",
         description = "Özel bildirim.",
@@ -37,7 +35,6 @@ Config.DefaultAlerts = {
 -- Blip tipleri listesi
 -- Tüm blip sprite ID'leri için: https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips
 Config.Blips = {
-    -- Ateş etme bildirimi için blip
     shotfire = {
         sprite = 150441873,                  
         scale = 0.5,                          
@@ -47,7 +44,6 @@ Config.Blips = {
         areaSize = 10.0                       
     },
     
-    -- Varsayılan özel bildirim blipi
     custom = {
         sprite = 1754506823,
         scale = 0.5,
